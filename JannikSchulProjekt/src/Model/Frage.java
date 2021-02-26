@@ -3,12 +3,12 @@ package Model;
 public class Frage {
 	private String frage;
 	private String richtigeAntwort;
-	private String[] falscheAntworten;
+	private String[] falscheAntwort;
 	
-	public Frage(String pFrage, String pAntwort, String[] pFalscheAntworten) {
+	public Frage(String pFrage, String[] pFalsch,String pRichtig) {
 		frage= pFrage;
-		richtigeAntwort= pAntwort;
-		falscheAntworten=pFalscheAntworten;
+		richtigeAntwort= pRichtig;
+		falscheAntwort=pFalsch;
 	}
 
 	public String getFrage() {
@@ -28,11 +28,11 @@ public class Frage {
 	}
 
 	public String[] getFalscheAntworten() {
-		return falscheAntworten;
+		return falscheAntwort;
 	}
 
 	public void setFalscheAntworten(String[] falscheAntworten) {
-		this.falscheAntworten = falscheAntworten;
+		this.falscheAntwort = falscheAntworten;
 	}
 	
 }
