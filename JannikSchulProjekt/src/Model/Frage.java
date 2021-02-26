@@ -1,6 +1,7 @@
 package Model;
 
 public class Frage {
+	
 	private String frage;
 	private String richtigeAntwort;
 	private String[] falscheAntwort;
@@ -44,6 +45,5 @@ public class Frage {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
 	
 }
