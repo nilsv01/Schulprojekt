@@ -7,7 +7,6 @@ import java.awt.Dimension;
 import javax.swing.*;
 import javax.swing.border.*;
 
-import Controller.*;
 
 public class MainWindow {
 	private static MainWindow instance;
@@ -24,7 +23,7 @@ public class MainWindow {
 		this.jFrame = new JFrame("Gutachter Zuordnung");
 		this.jFrame.setSize(1000, 1000);
 		this.jFrame.setVisible(true);
-		ueberarbeiteMainWindow(erstelleHauptmenu());
+		erstelleHauptmenu();
 		return jFrame;
 	}
 	
@@ -35,22 +34,11 @@ public class MainWindow {
 		return MainWindow.instance;
 	}
 	
-	public JPanel erstelleHauptmenu() {
+	public void erstelleHauptmenu() {
 		JPanel jPanel = new JPanel();
-		
-		JButton startButton = new JButton("Start");
-		buttonListener.getButtonHashMap().put("Start", startButton);
-		startButton.addActionListener(this.buttonListener);
-		
-		
-		GroupLayout layout = new GroupLayout(jPanel);
-		layout.setAutoCreateGaps(true);
-		layout.setAutoCreateContainerGaps(true);
-		layout.setHorizontalGroup(layout.createSequentialGroup()
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(startButton)));
-		layout.setVerticalGroup(layout.createSequentialGroup()
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(startButton)));
-		return jPanel;		
+		StartMenu startMenu = new StartMenu();
+        MainWindow.getInstance().ueberarbeiteMainWindow(
+        		startMenu.erstelleStartMenu());
 	}
 	
 	public void ueberarbeiteMainWindow(JPanel jPanel) {

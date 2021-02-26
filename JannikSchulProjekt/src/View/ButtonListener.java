@@ -27,8 +27,9 @@ public class ButtonListener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if (event.getSource() == this.buttonHashMap.get("Start")) {
-			MainWindow.getInstance().ueberarbeiteMainWindow(
-					StartMenu.getInstance().erstelleStartMenu());
+			 FrageAntwort frageAntwort = new FrageAntwort("f","a1","a2","a3","a4");
+			 MainWindow.getInstance().ueberarbeiteMainWindow(
+						frageAntwort.erstelleFrageAntwort());
 		}
 	}
 }
