@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import javax.swing.*;
 import javax.swing.border.*;
 
+import Controller.*;
 
 public class MainWindow {
 	private static MainWindow instance;
