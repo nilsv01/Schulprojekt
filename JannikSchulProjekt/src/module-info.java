@@ -1,3 +1,4 @@
 module JannikSchulProjekt {
-	/* jannik stinkt */
+	/* jannik stink
+	 * ich mag aids */
 }
