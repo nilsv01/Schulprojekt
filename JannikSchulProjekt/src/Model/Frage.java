@@ -4,11 +4,13 @@ public class Frage {
 	private String frage;
 	private String richtigeAntwort;
 	private String[] falscheAntwort;
+	private boolean status = false;
 	
 	public Frage(String pFrage, String[] pFalsch,String pRichtig) {
-		frage= pFrage;
-		richtigeAntwort= pRichtig;
-		falscheAntwort=pFalsch;
+		frage = pFrage;
+		richtigeAntwort = pRichtig;
+		falscheAntwort = pFalsch;
+		
 	}
 
 	public String getFrage() {
@@ -27,12 +29,21 @@ public class Frage {
 		this.richtigeAntwort = richtigeAntwort;
 	}
 
-	public String[] getFalscheAntworten() {
+	public String[] getFalscheAntwort() {
 		return falscheAntwort;
 	}
 
-	public void setFalscheAntworten(String[] falscheAntworten) {
-		this.falscheAntwort = falscheAntworten;
+	public void setFalscheAntwort(String[] falscheAntwort) {
+		this.falscheAntwort = falscheAntwort;
 	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	
 	
 }
