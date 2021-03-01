@@ -15,6 +15,7 @@ public class Controller {
 	    int Fragenanzahl=ReadFromFile.readFragen("Fragenkatalog").size();
 	    int zufallszahl =(int)(Math.random()*Fragenanzahl)+1;    
 	    akt=ReadFromFile.readFragen("Fragenkatalog").get(zufallszahl);
+	    akt.setStatus(true);
 	    return akt;
 	  }
 }
