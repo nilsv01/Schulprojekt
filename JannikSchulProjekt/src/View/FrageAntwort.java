@@ -18,14 +18,17 @@ public class FrageAntwort {
 	String antwortText2;
 	String antwortText3;
 	String antwortText4;
+	int loesung;
 	
 	
-	public FrageAntwort(String frageText, String antwort1, String antwort2, String antwort3, String antwort4) {
+	public FrageAntwort(String frageText, String antwort1, String antwort2, String antwort3, String antwort4, int loesung) {
 		this.frageText = frageText;
 	    this.antwortText1 = antwort1;	
 	    this.antwortText2 = antwort2;	
 	    this.antwortText3 = antwort3;	
-	    this.antwortText4 = antwort4;	
+	    this.antwortText4 = antwort4;
+	    this.loesung = loesung;
+	    
 	}
 	public JPanel erstelleFrageAntwort() {
 		
