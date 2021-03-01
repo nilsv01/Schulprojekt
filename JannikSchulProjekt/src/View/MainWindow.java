@@ -21,7 +21,7 @@ public class MainWindow {
 	public JFrame erstelleMainWindow() {
 
 		this.jFrame = new JFrame("Gutachter Zuordnung");
-		this.jFrame.setSize(1000, 1000);
+		this.jFrame.setSize(1500, 1000);
 		this.jFrame.setVisible(true);
 		erstelleHauptmenu();
 		return jFrame;
