@@ -2,11 +2,15 @@ package View;
 
 import javax.swing.GroupLayout;
 
+import Model.Spiel;
+
 import java.awt.*;
 
 import javax.swing.*;
 
 public class FrageAntwort {
+	ButtonListener buttonListener = new ButtonListener();
+	
 	JPanel jMainPanel = new JPanel();
 	JPanel jPanel = new JPanel();
 	JPanel jPanelUnten = new JPanel();
@@ -17,12 +21,31 @@ public class FrageAntwort {
 	JPanel jPanelGeld = new JPanel();
 	JPanel jPanelKopf = new JPanel();
 	JPanel jPanelMitte = new JPanel();
-	ButtonListener buttonListener = new ButtonListener();	
+	
+	JLabel blank   = new JLabel(" ");
+	
+    JLabel frage1  = new JLabel(" 1 - € 50");
+    JLabel frage2  = new JLabel(" 2 - € 100");
+    JLabel frage3  = new JLabel(" 3 - € 200");
+    JLabel frage4  = new JLabel(" 4 - € 300");
+    JLabel frage5  = new JLabel(" 5 - € 500");
+    JLabel frage6  = new JLabel(" 6 - € 1.000");
+    JLabel frage7  = new JLabel(" 7 - € 2.000");
+    JLabel frage8  = new JLabel(" 8 - € 4.000");
+    JLabel frage9  = new JLabel(" 9 - € 8.000");
+    JLabel frage10 = new JLabel("10 - € 16.000");
+    JLabel frage11 = new JLabel("11 - € 32.000");
+    JLabel frage12 = new JLabel("12 - € 64.000");
+    JLabel frage13 = new JLabel("13 - € 125.000");
+    JLabel frage14 = new JLabel("14 - € 500.000");
+    JLabel frage15 = new JLabel("15 - € 1MILLION");
+    
 	String frageText;
 	String antwortText1;
 	String antwortText2;
 	String antwortText3;
 	String antwortText4;
+	
 	
 	int loesung;
 	
@@ -46,6 +69,11 @@ public class FrageAntwort {
 		JButton jokerTelefon = new JButton("Telefonjoker");
 		JButton joker50 = new JButton("50 / 50 Joker");
 		JButton jokerPublikum = new JButton("Publikumsjoker");
+		JButton jButtonEnde = new JButton("Spiel beenden");
+		
+		blank.setPreferredSize(new Dimension(700,10));
+		blank.setMinimumSize(new Dimension(700,10));
+		blank.setMaximumSize(new Dimension(700,10));
 		
 		buttonListener.getButtonHashMap().put("Antwort1", antwort1);
 		antwort1.addActionListener(this.buttonListener);		
@@ -63,20 +91,26 @@ public class FrageAntwort {
 		buttonListener.getButtonHashMap().put("jokerTelefon", jokerTelefon);
 		jokerTelefon.addActionListener(this.buttonListener);
 		jokerTelefon.setPreferredSize(new Dimension(500,50));	
+		jokerTelefon.setEnabled(Spiel.getInstance().isJokerTelefon());
 		buttonListener.getButtonHashMap().put("joker50", joker50);
 		joker50.addActionListener(this.buttonListener);
 		joker50.setPreferredSize(new Dimension(500,50));	
+		joker50.setEnabled(Spiel.getInstance().isJoker50());
 		buttonListener.getButtonHashMap().put("jokerPublikum", jokerPublikum);
 		jokerPublikum.addActionListener(this.buttonListener);
 		jokerPublikum.setPreferredSize(new Dimension(500,50));	
+		jokerPublikum.setEnabled(Spiel.getInstance().isJokerPublikum());
 		
+		buttonListener.getButtonHashMap().put("ende", jButtonEnde);
+		jButtonEnde.addActionListener(this.buttonListener);
+		jButtonEnde.setPreferredSize(new Dimension(300,30));
+				
+		jPanelKopf.add(jButtonEnde, BorderLayout.PAGE_START);		
 		jPanelAntwortoben.add(antwort1, BorderLayout.LINE_START);
 		jPanelAntwortoben.add(antwort2, BorderLayout.LINE_END);
 		jPanelAntwortunten.add(antwort3, BorderLayout.LINE_START);
 		jPanelAntwortunten.add(antwort4, BorderLayout.LINE_END);
 		jPanelFrage.add(frage,BorderLayout.CENTER);
-		/*	jPanelAntwort.add(jPanelAntwortoben, BorderLayout.PAGE_START);
-		jPanelAntwort.add(jPanelAntwortunten, BorderLayout.PAGE_END); */
 		
 		GroupLayout layoutUnten = new GroupLayout(jPanelUnten);
 		layoutUnten.setAutoCreateGaps(true);
@@ -90,10 +124,7 @@ public class FrageAntwort {
 				.addGroup(layoutUnten.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jPanelFrage))
 				.addGroup(layoutUnten.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jPanelAntwortoben))
 				.addGroup(layoutUnten.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jPanelAntwortunten)));
-		jPanelUnten.setLayout(layoutUnten);
-	/*	jPanel.add(frage, BorderLayout.NORTH);
-		jPanel.add(jPanelAntwort, BorderLayout.SOUTH);*/
-		
+		jPanelUnten.setLayout(layoutUnten);	
 		
 		GroupLayout layoutJoker = new GroupLayout(jPanelJoker);
 		layoutJoker.setAutoCreateGaps(true);
@@ -108,22 +139,76 @@ public class FrageAntwort {
 				.addGroup(layoutJoker.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(joker50))
 				.addGroup(layoutJoker.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jokerPublikum)));
 		jPanelJoker.setLayout(layoutJoker);
-		
+				
+		GroupLayout layoutGeld = new GroupLayout(jPanelGeld);
+		layoutGeld.setAutoCreateGaps(true);
+		layoutGeld.setAutoCreateContainerGaps(true);
+		layoutGeld.setHorizontalGroup(layoutGeld.createSequentialGroup()
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(frage15)
+						.addComponent(frage14)
+						.addComponent(frage13)
+						.addComponent(frage12)
+						.addComponent(frage11)
+						.addComponent(frage10)
+						.addComponent(frage9)
+						.addComponent(frage8)
+						.addComponent(frage7)
+						.addComponent(frage6)
+						.addComponent(frage5)
+						.addComponent(frage4)
+						.addComponent(frage3)
+						.addComponent(frage2)
+						.addComponent(frage1)));
+		layoutGeld.setVerticalGroup(layoutGeld.createSequentialGroup()
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage15))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage14))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage13))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage12))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage11))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage10))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage9))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage8))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage7))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage6))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage5))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage4))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage3))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage2))
+				.addGroup(layoutGeld.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(frage1)));
+		jPanelGeld.setLayout(layoutGeld);
+				
 		GroupLayout layoutMitte = new GroupLayout(jPanelMitte);
 		layoutMitte.setAutoCreateGaps(true);
 		layoutMitte.setAutoCreateContainerGaps(true);
 		layoutMitte.setHorizontalGroup(layoutMitte.createSequentialGroup()
 				.addGroup(layoutMitte.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jPanelJoker))
-				.addGroup(layoutMitte.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jPanelGeld)));
+		        .addGroup(layoutMitte.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(blank))	
+				.addGroup(layoutMitte.createParallelGroup(GroupLayout.Alignment.TRAILING).addComponent(jPanelGeld)));
 		layoutMitte.setVerticalGroup(layoutMitte.createSequentialGroup()
 				.addGroup(layoutMitte.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(jPanelJoker)
+						.addComponent(blank)
 						.addComponent(jPanelGeld)));
 		jPanelMitte.setLayout(layoutMitte);
 		
-		jMainPanel.add(jPanelKopf, BorderLayout.PAGE_START);
+/*		jMainPanel.add(jPanelKopf, BorderLayout.PAGE_START);
 		jMainPanel.add(jPanelMitte, BorderLayout.CENTER);
-		jMainPanel.add(jPanelUnten, BorderLayout.PAGE_END);
+		jMainPanel.add(jPanelUnten, BorderLayout.PAGE_END); */
+		
+		GroupLayout layoutMain = new GroupLayout(jMainPanel);
+		layoutMain.setAutoCreateGaps(true);
+		layoutMain.setAutoCreateContainerGaps(true);
+		layoutMain.setHorizontalGroup(layoutMain.createSequentialGroup()
+				.addGroup(layoutMain.createParallelGroup(GroupLayout.Alignment.CENTER)
+						.addComponent(jPanelKopf)
+						.addComponent(jPanelMitte)
+						.addComponent(jPanelUnten)));
+		layoutMain.setVerticalGroup(layoutMain.createSequentialGroup()				
+				.addGroup(layoutMain.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jPanelKopf))
+				.addGroup(layoutMain.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jPanelMitte))
+				.addGroup(layoutMain.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jPanelUnten)));
+		jMainPanel.setLayout(layoutMain);
 		
 		jMainPanel.setPreferredSize(new Dimension(1200,1000));
 		jPanel.add(jMainPanel);
