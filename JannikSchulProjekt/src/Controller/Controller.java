@@ -78,8 +78,7 @@ public class Controller {
 		 		break;
 		 	case 4:
 		 		index4=aktuelleFrage.getFalscheAntwort(2);
-		
-		
+				
 		 }
 		 switch(richtig) {
 		 	case 1:
