@@ -8,25 +8,26 @@ import java.util.ArrayList;
 
 public class ReadFromFile{
 
-  public static ArrayList<Frage> readFragen(String pFileName){
-    ArrayList<Frage> retFragen = new ArrayList<Frage>();
-    try {
-      File myObj = new File(pFileName);
-      Scanner myReader = new Scanner(myObj);
-      while (myReader.hasNextLine()) {
-        String data = myReader.nextLine();
+	 public static ArrayList<Frage> readFragen(String pFileName){
+		    ArrayList<Frage> retFragen = new ArrayList<Frage>();
+		    try {
+		      File myObj = new File(pFileName);
+		      Scanner myReader = new Scanner(myObj);
+		      while (myReader.hasNextLine()) {
+		        String data = myReader.nextLine();
 
-        retFragen.add(createFrage(data));
-        
-        //System.out.println(data);
-      }
-      myReader.close();
-    } catch (FileNotFoundException e) {
-      System.out.println("An error occurred.");
-      e.printStackTrace();
-    }
-    return retFragen;
-  }
+		        // Datei wird in Fragen Objekt umgewandelt
+		        retFragen.add(createFrage(data));
+		        
+		        //System.out.println(data);
+		      }
+		      myReader.close();
+		    } catch (FileNotFoundException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		    return retFragen;
+		  }
 
   private static Frage createFrage(String pLine){
     
