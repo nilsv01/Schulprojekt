@@ -13,14 +13,14 @@ public class MainWindow {
 	private JFrame jFrame;
 	private ButtonListener buttonListener = new ButtonListener();
 	private JPanel panel = new JPanel();
-
+	
 	private MainWindow() {
 	
 	}
 	
 	public JFrame erstelleMainWindow() {
 
-		this.jFrame = new JFrame("Gutachter Zuordnung");
+		this.jFrame = new JFrame("Wer wird Millionär");
 		this.jFrame.setSize(1500, 1000);
 		this.jFrame.setVisible(true);
 		erstelleHauptmenu();
@@ -35,6 +35,7 @@ public class MainWindow {
 	}
 	
 	public void erstelleHauptmenu() {
+		
 		JPanel jPanel = new JPanel();
 		StartMenu startMenu = new StartMenu();
         MainWindow.getInstance().ueberarbeiteMainWindow(

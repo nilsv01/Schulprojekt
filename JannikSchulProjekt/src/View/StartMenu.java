@@ -5,7 +5,7 @@ import View.*;
 
 public class StartMenu {
 	JPanel jPanel = new JPanel();
-	ButtonListener buttonListener = new ButtonListener();
+	ButtonListener buttonListener = ButtonListener.getInstance();
 	JButton startButton = new JButton("Start");
 	public StartMenu() {
 		

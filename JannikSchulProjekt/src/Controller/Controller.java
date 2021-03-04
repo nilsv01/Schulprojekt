@@ -24,7 +24,8 @@ public class Controller {
 		 int indexFalsch1= (int)(Math.random()*4)+1;
 		 int indexFalsch2= (int)(Math.random()*4)+1;
 		 int indexFalsch3= (int)(Math.random()*4)+1;
-		 int indexRichtig= (int)(Math.random()*4)+1;
+		 int indexRichtig;
+		 
 		 while(indexFalsch2==indexFalsch1){
 			 indexFalsch2= (int)(Math.random()*3);
 		 }
