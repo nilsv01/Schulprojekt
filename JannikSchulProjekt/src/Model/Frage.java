@@ -33,6 +33,10 @@ public class Frage {
 	public String[] getFalscheAntwort() {
 		return falscheAntwort;
 	}
+	
+	public String getFalscheAntwort(int index){
+		return falscheAntwort[index];
+	}
 
 	public void setFalscheAntwort(String[] falscheAntwort) {
 		this.falscheAntwort = falscheAntwort;

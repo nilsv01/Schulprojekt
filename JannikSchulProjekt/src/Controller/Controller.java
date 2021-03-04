@@ -1,5 +1,6 @@
 package Controller;
 import Model.*;
+
 public class Controller {
 	private static Controller instance;
 	
@@ -21,22 +22,82 @@ public class Controller {
 	  }
 	
 	 public String randomBuchstabe(Frage aktuelleFrage) {
-		 int indexFalsch1= (int)(Math.random()*4)+1;
-		 int indexFalsch2= (int)(Math.random()*4)+1;
-		 int indexFalsch3= (int)(Math.random()*4)+1;
-		 int indexRichtig;
+		 int falsch1= (int)(Math.random()*4)+1;
+		 int falsch2= (int)(Math.random()*4)+1;
+		 int falsch3= (int)(Math.random()*4)+1;
+		 int richtig;
+		 String index1="";
+		 String index2="";
+		 String index3="";
+		 String index4="";
+		 while(falsch2==falsch1){
+			 falsch2= (int)(Math.random()*3);
+		 }
+		 while(falsch3==falsch1||falsch3==falsch2) {
+			falsch3= (int)(Math.random()*4)+1;
+		 }
+		richtig=10-falsch1-falsch2-falsch3;
 		 
-		 while(indexFalsch2==indexFalsch1){
-			 indexFalsch2= (int)(Math.random()*3);
+		 switch(falsch1) {
+		 	case 1:
+		 		index1=aktuelleFrage.getFalscheAntwort(0);
+		 		break;
+		 	case 2:
+		 		index2=aktuelleFrage.getFalscheAntwort(0);
+		 		break;
+		 	case 3:
+		 		index3=aktuelleFrage.getFalscheAntwort(0);
+		 		break;
+		 	case 4:
+		 		index4=aktuelleFrage.getFalscheAntwort(0);
 		 }
-		 while(indexFalsch3==indexFalsch1||indexFalsch3==indexFalsch2) {
-			 indexFalsch3= (int)(Math.random()*4)+1;
+		 switch(falsch2) {
+		 	case 1:
+		 		index1=aktuelleFrage.getFalscheAntwort(1);
+		 		break;
+		 	case 2:
+		 		index2=aktuelleFrage.getFalscheAntwort(1);
+		 		break;
+		 	case 3:
+		 		index3=aktuelleFrage.getFalscheAntwort(1);
+		 		break;
+		 	case 4:
+		 		index4=aktuelleFrage.getFalscheAntwort(1);
+		
+		
 		 }
-		 indexRichtig=10-indexFalsch1-indexFalsch2-indexFalsch3;
-		 return indexFalsch1+""+indexFalsch2+""+indexFalsch3+""+indexRichtig;
-	}
-	
-	
+		 switch(falsch3) {
+		 	case 1:
+		 		index1=aktuelleFrage.getFalscheAntwort(2);
+		 		break;
+		 	case 2:
+		 		index2=aktuelleFrage.getFalscheAntwort(2);
+		 		break;
+		 	case 3:
+		 		index3=aktuelleFrage.getFalscheAntwort(2);
+		 		break;
+		 	case 4:
+		 		index4=aktuelleFrage.getFalscheAntwort(2);
+		
+		
+		 }
+		 switch(richtig) {
+		 	case 1:
+		 		index1=aktuelleFrage.getRichtigeAntwort();
+		 		break;
+		 	case 2:
+		 		index2=aktuelleFrage.getRichtigeAntwort();
+		 		break;
+		 	case 3:
+		 		index3=aktuelleFrage.getRichtigeAntwort();
+		 		break;
+		 	case 4:
+		 		index4=aktuelleFrage.getRichtigeAntwort();
+		
+		
+		 }
+		 return index1+";"+index1+";"+index1+";"+index1+";"+richtig;
+ }
 	
 	public void fitftyfifty(Frage aktuelleFrage){
 	    int indexFalscheFrage1= (int)(Math.random()*3);
