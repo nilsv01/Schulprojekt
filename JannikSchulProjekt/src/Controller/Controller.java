@@ -94,7 +94,6 @@ public class Controller {
 		 	case 4:
 		 		index4=aktuelleFrage.getRichtigeAntwort();
 		
-		
 		 }
 		 return aktuelleFrage.getFrage()+";"+index1+";"+index2+";"+index3+";"+index4+";"+richtig;
  }
