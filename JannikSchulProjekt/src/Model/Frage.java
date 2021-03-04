@@ -37,7 +37,10 @@ public class Frage {
 	public void setFalscheAntwort(String[] falscheAntwort) {
 		this.falscheAntwort = falscheAntwort;
 	}
-
+	
+	public void setFalscheAntwortPos(int pPosition,String falscheAntwort) {
+		this.falscheAntwort[pPosition] = falscheAntwort;
+	}
 	public boolean isStatus() {
 		return status;
 	}
