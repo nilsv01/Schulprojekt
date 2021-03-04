@@ -16,8 +16,12 @@ public class Controller {
 	    int zufallszahl =(int)(Math.random()*Fragenanzahl)+1;    
 	    akt=ReadFromFile.readFragen("Fragenkatalog").get(zufallszahl);
 	    akt.setStatus(true);
+	    
 	    return akt;
 	  }
+	
+	
+	
 	public void fitftyfifty(Frage aktuelleFrage){
 	    int indexFalscheFrage1= (int)(Math.random()*3);
 	    int indexFalscheFrage2= (int)(Math.random()*3);
