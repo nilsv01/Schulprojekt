@@ -20,6 +20,21 @@ public class Controller {
 	    return akt;
 	  }
 	
+	 public String randomBuchstabe(Frage aktuelleFrage) {
+		 int indexFalsch1= (int)(Math.random()*4)+1;
+		 int indexFalsch2= (int)(Math.random()*4)+1;
+		 int indexFalsch3= (int)(Math.random()*4)+1;
+		 int indexRichtig= (int)(Math.random()*4)+1;
+		 while(indexFalsch2==indexFalsch1){
+			 indexFalsch2= (int)(Math.random()*3);
+		 }
+		 while(indexFalsch3==indexFalsch1||indexFalsch3==indexFalsch2) {
+			 indexFalsch3= (int)(Math.random()*4)+1;
+		 }
+		 indexRichtig=10-indexFalsch1-indexFalsch2-indexFalsch3;
+		 return indexFalsch1+""+indexFalsch2+""+indexFalsch3+""+indexRichtig;
+	}
+	
 	
 	
 	public void fitftyfifty(Frage aktuelleFrage){
@@ -31,4 +46,5 @@ public class Controller {
 	    aktuelleFrage.setFalscheAntwortPos(indexFalscheFrage1,"");
 	    aktuelleFrage.setFalscheAntwortPos(indexFalscheFrage2,"");
 	  }
+	
 }
