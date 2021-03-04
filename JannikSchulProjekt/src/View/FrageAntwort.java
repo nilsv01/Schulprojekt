@@ -99,15 +99,21 @@ public class FrageAntwort {
 		
 		buttonListener.getButtonHashMap().put("jokerTelefon", jokerTelefon);
 		jokerTelefon.addActionListener(this.buttonListener);
-		jokerTelefon.setPreferredSize(new Dimension(500,50));	
+		jokerTelefon.setPreferredSize(new Dimension(150,25));
+		jokerTelefon.setMinimumSize(new Dimension(150,25));	
+		jokerTelefon.setMaximumSize(new Dimension(150,25));	
 		jokerTelefon.setEnabled(Spiel.getInstance().isJokerTelefon());
 		buttonListener.getButtonHashMap().put("joker50", joker50);
 		joker50.addActionListener(this.buttonListener);
-		joker50.setPreferredSize(new Dimension(500,50));	
+		joker50.setPreferredSize(new Dimension(150,25));
+		joker50.setMinimumSize(new Dimension(150,25));	
+		joker50.setMaximumSize(new Dimension(150,25));	
 		joker50.setEnabled(Spiel.getInstance().isJoker50());
 		buttonListener.getButtonHashMap().put("jokerPublikum", jokerPublikum);
 		jokerPublikum.addActionListener(this.buttonListener);
-		jokerPublikum.setPreferredSize(new Dimension(500,50));	
+		jokerPublikum.setPreferredSize(new Dimension(150,25));
+		jokerPublikum.setMinimumSize(new Dimension(150,25));	
+		jokerPublikum.setMaximumSize(new Dimension(150,25));
 		jokerPublikum.setEnabled(Spiel.getInstance().isJokerPublikum());
 		
 		buttonListener.getButtonHashMap().put("ende", jButtonEnde);
