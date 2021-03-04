@@ -18,7 +18,15 @@ public class ButtonListener implements ActionListener{
 	
 	private HashMap<String, JButton> buttonHashMap = new HashMap<>();
 	private ArrayList<Object> inputArrayList = new ArrayList<>();
-	FrageAntwort frageAntwort;
+	private FrageAntwort frageAntwort;
+	String frage;
+	String antwort1;
+	String antwort2;
+	String antwort3;
+	String antwort4;
+	String loesungText;
+	int loesungNum;
+	
 	
 	public HashMap<String, JButton> getButtonHashMap() {
 		return buttonHashMap;
@@ -38,9 +46,18 @@ public class ButtonListener implements ActionListener{
 	public void actionPerformed(ActionEvent event) {
 		if (event.getSource() == this.buttonHashMap.get("Start")) {
 		     Spiel.getInstance().restart();
+		     String[] parts = Controller.getInstance().randomBuchstabe(Controller.getInstance().random()).split(";");
+		     parts[0] = frage;
+		     parts[1] = antwort1;
+		     parts[2] = antwort2;
+		     parts[3] = antwort3;
+		     parts[4] = antwort4;
+		     parts[5] = loesungText;
+		     loesungNum = Integer.valueOf(loesungText);
+		     
 		     frageAntwort = new FrageAntwort();
 			 MainWindow.getInstance().ueberarbeiteMainWindow(
-						frageAntwort.erstelleFrageAntwort("f","a1","a2","a3","a4",3));
+						frageAntwort.erstelleFrageAntwort(frage, antwort1, antwort2, antwort3, antwort4, loesungNum));
 		}
 		if (event.getSource() == this.buttonHashMap.get("ende")) {
 		     StartMenu startMenu = new StartMenu();
