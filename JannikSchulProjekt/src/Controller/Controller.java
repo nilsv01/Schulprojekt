@@ -96,7 +96,7 @@ public class Controller {
 		
 		
 		 }
-		 return index1+";"+index1+";"+index1+";"+index1+";"+richtig;
+		 return aktuelleFrage.getFrage()+";"+index1+";"+index2+";"+index3+";"+index4+";"+richtig;
  }
 	
 	public void fitftyfifty(Frage aktuelleFrage){
