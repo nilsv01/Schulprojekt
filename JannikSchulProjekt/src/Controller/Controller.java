@@ -106,5 +106,4 @@ public class Controller {
 	    aktuelleFrage.setFalscheAntwortPos(indexFalscheFrage1,"");
 	    aktuelleFrage.setFalscheAntwortPos(indexFalscheFrage2,"");
 	  }
-	
 }
