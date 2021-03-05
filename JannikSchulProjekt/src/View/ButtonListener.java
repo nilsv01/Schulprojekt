@@ -24,6 +24,7 @@ public class ButtonListener implements ActionListener{
 	String antwort3;
 	String antwort4;
 	String loesungText;
+	boolean sieg = false;
 	int loesungNum;
 	
 	
@@ -44,8 +45,9 @@ public class ButtonListener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if (event.getSource() == this.buttonHashMap.get("Start")) {
-/*		     Spiel.getInstance().restart();
+		     Spiel.getInstance().restart();
 		     String[] parts = Controller.getInstance().randomBuchstabe(Controller.getInstance().random()).split(";");
+		     System.out.println(parts[1]);
 		     parts[0] = frage;
 		     parts[1] = antwort1;
 		     parts[2] = antwort2;
@@ -53,83 +55,120 @@ public class ButtonListener implements ActionListener{
 		     parts[4] = antwort4;
 		     parts[5] = loesungText;
 		     loesungNum = Integer.valueOf(loesungText);
-		     */
+		     
 			 loesungNum = 1;
 		     FrageAntwort frageAntwort = new FrageAntwort();
 			 MainWindow.getInstance().ueberarbeiteMainWindow(
-						frageAntwort.erstelleFrageAntwort("f","a","b","c","d",1));
-						/*frage, antwort1, antwort2, antwort3, antwort4, loesungNum)*/
+						frageAntwort.erstelleFrageAntwort(frage, antwort1, antwort2, antwort3, antwort4, loesungNum));
+						/*"f","a","b","c","d",1*/
 		}
 		if (event.getSource() == this.buttonHashMap.get("ende")) {
 		     StartMenu startMenu = new StartMenu();
 			 MainWindow.getInstance().ueberarbeiteMainWindow(startMenu.erstelleStartMenu());
 		}
 		if (event.getSource() == this.buttonHashMap.get("Antwort1")) {
-			Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
-			
-			if(loesungNum == 1) {
-				if(loesungNum != 16) {
-					
+		   if(loesungNum == 1) {
+				Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
+				if(Spiel.getInstance().getNummerFrage() != 16) {					 
+				     String[] parts = Controller.getInstance().randomBuchstabe(Controller.getInstance().random()).split(";");
+				     parts[0] = frage;
+				     parts[1] = antwort1;
+				     parts[2] = antwort2;
+				     parts[3] = antwort3;
+				     parts[4] = antwort4;
+				     parts[5] = loesungText;
+				     loesungNum = Integer.valueOf(loesungText);	
 				FrageAntwort frageAntwort = new FrageAntwort();
 				MainWindow.getInstance().ueberarbeiteMainWindow(						
-						frageAntwort.erstelleFrageAntwort("f","a","b","c","d",1));
+						frageAntwort.erstelleFrageAntwort(frage, antwort1, antwort2, antwort3, antwort4, loesungNum));
 				} else {
-					
+					sieg = true;
+					Endscreen endscreen = new Endscreen();
+					MainWindow.getInstance().ueberarbeiteMainWindow(endscreen.erstelleEndscreen(sieg));
 				}
 			} else {
-		     StartMenu startMenu = new StartMenu();
-			 MainWindow.getInstance().ueberarbeiteMainWindow(startMenu.erstelleStartMenu());
+				sieg = false;
+				Endscreen endscreen = new Endscreen();
+				MainWindow.getInstance().ueberarbeiteMainWindow(endscreen.erstelleEndscreen(sieg));
 			}
 		}
-		if (event.getSource() == this.buttonHashMap.get("Antwort2")) {
-			Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
-			
+		if (event.getSource() == this.buttonHashMap.get("Antwort2")) {			
 			if(loesungNum == 2) {
-				if(loesungNum != 16) {
+				Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
+				if(Spiel.getInstance().getNummerFrage() != 16) {					 
+				     String[] parts = Controller.getInstance().randomBuchstabe(Controller.getInstance().random()).split(";");
+				     parts[0] = frage;
+				     parts[1] = antwort1;
+				     parts[2] = antwort2;
+				     parts[3] = antwort3;
+				     parts[4] = antwort4;
+				     parts[5] = loesungText;
+				     loesungNum = Integer.valueOf(loesungText);		
 				Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
 				FrageAntwort frageAntwort = new FrageAntwort();
 				MainWindow.getInstance().ueberarbeiteMainWindow(
 						frageAntwort.erstelleFrageAntwort(frage, antwort1, antwort2, antwort3, antwort4, loesungNum));
 				} else {
-					
+					sieg = true;
+					Endscreen endscreen = new Endscreen();
+					MainWindow.getInstance().ueberarbeiteMainWindow(endscreen.erstelleEndscreen(sieg));
 				}
 			} else {
-		     StartMenu startMenu = new StartMenu();
-			 MainWindow.getInstance().ueberarbeiteMainWindow(startMenu.erstelleStartMenu());
+				sieg = false;
+				Endscreen endscreen = new Endscreen();
+				MainWindow.getInstance().ueberarbeiteMainWindow(endscreen.erstelleEndscreen(sieg));
 			}
 		}
-		if (event.getSource() == this.buttonHashMap.get("Antwort3")) {
-			Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
-			
+		if (event.getSource() == this.buttonHashMap.get("Antwort3")) {			
 			if(loesungNum == 3) {
-				if(loesungNum != 16) {
-					
+				Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
+				if(Spiel.getInstance().getNummerFrage() != 16) {					 
+				     String[] parts = Controller.getInstance().randomBuchstabe(Controller.getInstance().random()).split(";");
+				     parts[0] = frage;
+				     parts[1] = antwort1;
+				     parts[2] = antwort2;
+				     parts[3] = antwort3;
+				     parts[4] = antwort4;
+				     parts[5] = loesungText;
+				     loesungNum = Integer.valueOf(loesungText);	
 				FrageAntwort frageAntwort = new FrageAntwort();
 				MainWindow.getInstance().ueberarbeiteMainWindow(
 						frageAntwort.erstelleFrageAntwort(frage, antwort1, antwort2, antwort3, antwort4, loesungNum));
 				} else {
-					
+					sieg = true;
+					Endscreen endscreen = new Endscreen();
+					MainWindow.getInstance().ueberarbeiteMainWindow(endscreen.erstelleEndscreen(sieg));
 				}
 			} else {
-		     StartMenu startMenu = new StartMenu();
-			 MainWindow.getInstance().ueberarbeiteMainWindow(startMenu.erstelleStartMenu());
+				sieg = false;
+				Endscreen endscreen = new Endscreen();
+				MainWindow.getInstance().ueberarbeiteMainWindow(endscreen.erstelleEndscreen(sieg));
 			}
 		}
 		if (event.getSource() == this.buttonHashMap.get("Antwort4")) {
-			Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
-			
 			if(loesungNum == 4) {
-				if(loesungNum != 16) {
-				
+				Spiel.getInstance().setNummerFrage(Spiel.getInstance().getNummerFrage() + 1);
+				if(Spiel.getInstance().getNummerFrage() != 16) {					 
+				     String[] parts = Controller.getInstance().randomBuchstabe(Controller.getInstance().random()).split(";");
+				     parts[0] = frage;
+				     parts[1] = antwort1;
+				     parts[2] = antwort2;
+				     parts[3] = antwort3;
+				     parts[4] = antwort4;
+				     parts[5] = loesungText;
+				     loesungNum = Integer.valueOf(loesungText);	
 				FrageAntwort frageAntwort = new FrageAntwort();
 				MainWindow.getInstance().ueberarbeiteMainWindow(
 						frageAntwort.erstelleFrageAntwort(frage, antwort1, antwort2, antwort3, antwort4, loesungNum));
 				} else {
-					
+					sieg = true;
+					Endscreen endscreen = new Endscreen();
+					MainWindow.getInstance().ueberarbeiteMainWindow(endscreen.erstelleEndscreen(sieg));
 				}
 			} else {
-		     StartMenu startMenu = new StartMenu();
-			 MainWindow.getInstance().ueberarbeiteMainWindow(startMenu.erstelleStartMenu());
+				sieg = false;
+				Endscreen endscreen = new Endscreen();
+				MainWindow.getInstance().ueberarbeiteMainWindow(endscreen.erstelleEndscreen(sieg));
 			}
 		}
 		if (event.getSource() == this.buttonHashMap.get("jokerTelefon")) {
@@ -143,6 +182,10 @@ public class ButtonListener implements ActionListener{
 		if (event.getSource() == this.buttonHashMap.get("jokerPublikum")) {
 		     StartMenu startMenu = new StartMenu();
 			 MainWindow.getInstance().ueberarbeiteMainWindow(startMenu.erstelleStartMenu());
+		}
+		if (event.getSource() == this.buttonHashMap.get("Finish")) {
+			 StartMenu startMenu = new StartMenu();
+		     MainWindow.getInstance().ueberarbeiteMainWindow(startMenu.erstelleStartMenu());
 		}
 	}
 }

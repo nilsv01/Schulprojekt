@@ -1,10 +1,13 @@
 package View;
 
+import java.awt.BorderLayout;
+
 import javax.swing.*;
 
 public class Endscreen {
 	
 	JPanel jPanel = new JPanel();
+	JPanel jMainPanel = new JPanel();
 	JButton jButton = new JButton("weiter");
 	String nachricht;
 	ButtonListener buttonListener = ButtonListener.getInstance();
@@ -36,7 +39,7 @@ public class Endscreen {
 				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel))
 				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jButton)));
 		jPanel.setLayout(layout);
-		
-		return jPanel;
+		jMainPanel.add(jPanel, BorderLayout.CENTER);
+		return jMainPanel;
 	}	
 }
