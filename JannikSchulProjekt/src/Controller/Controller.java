@@ -17,9 +17,10 @@ public class Controller {
 	
 	public Frage random(){
 	    Frage akt;
-	    int Fragenanzahl = ReadFromFile.readFragen("Fragenkatalog").size();
+	    String datei = "Fragenkatalog.txt";
+	    int Fragenanzahl = ReadFromFile.readFragen(datei).size();
 	    int zufallszahl =(int)(Math.random()*Fragenanzahl)+1;  
-	    akt = ReadFromFile.readFragen("Fragenkatalog.txt").get(zufallszahl);
+	    akt = ReadFromFile.readFragen(datei).get(zufallszahl);
 	    akt.setStatus(true);
 	    
 	    return akt;
