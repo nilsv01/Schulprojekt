@@ -63,9 +63,7 @@ public class Controller {
 		 		index3=aktuelleFrage.getFalscheAntwort(1);
 		 		break;
 		 	case 4:
-		 		index4=aktuelleFrage.getFalscheAntwort(1);
-		
-		
+		 		index4=aktuelleFrage.getFalscheAntwort(1);				
 		 }
 		 switch(falsch3) {
 		 	case 1:
@@ -78,8 +76,7 @@ public class Controller {
 		 		index3=aktuelleFrage.getFalscheAntwort(2);
 		 		break;
 		 	case 4:
-		 		index4=aktuelleFrage.getFalscheAntwort(2);
-				
+		 		index4=aktuelleFrage.getFalscheAntwort(2);				
 		 }
 		 switch(richtig) {
 		 	case 1:
@@ -92,8 +89,7 @@ public class Controller {
 		 		index3=aktuelleFrage.getRichtigeAntwort();
 		 		break;
 		 	case 4:
-		 		index4=aktuelleFrage.getRichtigeAntwort();
-		
+		 		index4=aktuelleFrage.getRichtigeAntwort();		
 		 }
 		 return aktuelleFrage.getFrage()+";"+index1+";"+index2+";"+index3+";"+index4+";"+richtig;
  }
