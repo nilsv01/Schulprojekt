@@ -14,10 +14,11 @@ public class Controller {
 	public Frage random(){
 	    Frage akt;
 	    int Fragenanzahl=ReadFromFile.readFragen("Fragenkatalog").size();
-	    int zufallszahl =(int)(Math.random()*Fragenanzahl)+1;    
-	    akt=ReadFromFile.readFragen("Fragenkatalog").get(zufallszahl);
-	    akt.setStatus(true);
 	    
+	    do{int zufallszahl =(int)(Math.random()*Fragenanzahl)+1;    
+	    	akt=ReadFromFile.readFragen("Fragenkatalog").get(zufallszahl);
+	    }while(akt.isStatus());
+	    akt.setStatus(true);
 	    return akt;
 	  }
 	
