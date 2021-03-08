@@ -1,9 +1,13 @@
 package Controller;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JFileChooser;
+
 import Model.*;
 
 public class Controller {
 	private static Controller instance;
-	
 	public static Controller getInstance() {
 		if (Controller.instance == null) {
 			Controller.instance = new Controller();			
@@ -13,7 +17,15 @@ public class Controller {
 	
 	public Frage random(){
 	    Frage akt;
+<<<<<<< HEAD
 	    int Fragenanzahl=ReadFromFile.readFragen("Fragenkatalog").size();
+=======
+	    String datei = "Fragenkatalog.txt";
+	    int Fragenanzahl = ReadFromFile.readFragen(datei).size();
+	    int zufallszahl =(int)(Math.random()*Fragenanzahl)+1;  
+	    akt = ReadFromFile.readFragen(datei).get(zufallszahl);
+	    akt.setStatus(true);
+>>>>>>> branch 'master' of https://github.com/nilsv01/Schulprojekt.git
 	    
 	    do{int zufallszahl =(int)(Math.random()*Fragenanzahl)+1;    
 	    	akt=ReadFromFile.readFragen("Fragenkatalog").get(zufallszahl);
@@ -92,8 +104,8 @@ public class Controller {
 		 		index4=aktuelleFrage.getRichtigeAntwort();		
 		 }
 		 return aktuelleFrage.getFrage()+";"+index1+";"+index2+";"+index3+";"+index4+";"+richtig;
- }
-	
+	 }
+	 
 	public void fitftyfifty(Frage aktuelleFrage){
 	    int indexFalscheFrage1= (int)(Math.random()*3);
 	    int indexFalscheFrage2= (int)(Math.random()*3);
